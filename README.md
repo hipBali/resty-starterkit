@@ -26,6 +26,11 @@ Register the new request handler in conf/resty.json
 }
 ```
 
+Start or restart nginx server
+```
+$sh start.sh
+```
+
 Test your endpoint with CURL
 
 ```
