@@ -1,6 +1,10 @@
 --
 -- /api/test/all
 --
+-- resty-starterkit example - all
+-- 
+-- (c) 2023, github.com/hipBali
+--
 
 requestHandler = {
 

@@ -1,8 +1,10 @@
-
 --
 -- /api/auth/signup
 --
-
+-- resty-starterkit example - signup
+-- 
+-- (c) 2023, github.com/hipBali
+--
 
 local json = require "cjson"
 

@@ -1,3 +1,9 @@
+--
+-- Password hash utilities
+-- 
+-- (c) 2023, github.com/hipBali
+-- 
+
 local pbkdf2 = require "resty.nettle.pbkdf2"
 local ngx_re = require "ngx.re"
 local random = require "resty.random"

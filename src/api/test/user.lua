@@ -1,8 +1,10 @@
-
 --
 -- /api/test/users
 --
-
+-- resty-starterkit example - user
+-- 
+-- (c) 2023, github.com/hipBali
+--
 
 local json = require "cjson"
 local jwt_utils = require "lua.common.tokenutils"

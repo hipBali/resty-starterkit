@@ -3,6 +3,8 @@
 --
 -- based on https://github.com/x25/luajwt
 -- 
+-- (c) 2023, github.com/hipBali
+-- 
 
 local json = require "cjson"
 local hmac = require "resty.hmac"
@@ -25,6 +27,9 @@ local alg_verify = {
 local _DEFAULT_SECRET_KEY = 'g$jDTLRtzCS3gyXs'
 
 local M = {}
+
+M._SPRING_AUTH_KEY = 'Authorization'
+M._NODE_AUTH_KEY = 'x-access-token'
 
 function M.encode(data, key, alg)
 	if type(data) ~= 'table' then return nil, "Argument #1 must be table" end
@@ -118,10 +123,14 @@ function M.decode(data, key, verify)
 end
 
 local function getHeaderToken( hKey )
-	hKey = hKey or 'Authorization'
+	hKey = hKey or M._NODE_AUTH_KEY
 	local access_token = ngx.req.get_headers()[hKey]
 	if access_token then
-		return string.match(access_token, "Bearer%s+(.+)")
+		if hKey == M._SPRING_AUTH_KEY then
+			return string.match(access_token, "Bearer%s+(.+)")
+		else
+			return access_token
+		end
 	end
 end
 

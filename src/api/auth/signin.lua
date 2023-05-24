@@ -1,6 +1,9 @@
-
 --
 -- /api/auth/signup
+--
+-- resty-starterkit example - signin
+-- 
+-- (c) 2023, github.com/hipBali
 --
 
 local json = require "cjson"
@@ -30,9 +33,8 @@ requestHandler = {}
 requestHandler.post = function(r)
 	-- check the login credentials in body
 	local username, password
-	local body = json.decode(r.data)
+	local body = json.decode(r.data) -- with default secret key
 	username = body.username
 	password = body.password
-	-- local userData, accToken = authenticateUser(username, password)
-	return { type = "Bearer", username = userData.username, email = userData.email, roles = userData.roles, accessToken = accToken } 
+	return { username = userData.username, email = userData.email, roles = userData.roles, accessToken = accToken } 
 end 
