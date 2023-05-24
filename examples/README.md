@@ -35,3 +35,10 @@ Finally start the angular client, listening on port 4200
 ``
 $ npm start
 ``
+
+Copy example/api folder content to your (nginx) api folder and start the service
+```
+$ sh start.sh
+```
+
+
