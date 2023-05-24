@@ -3,8 +3,8 @@ Openresty Rest Api starter kit
 
 **Requirements**
 - OpenResty®
-- lua-resty-jwt
-- lua-resty-nettle
+- lua-resty-jwt (for examples)
+- lua-resty-nettle (for examples)
 
 **Creating a new Rest API endpoint**
 
