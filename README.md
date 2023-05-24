@@ -21,14 +21,8 @@ requestHandler = {
 Register the new request handler in conf/resty.json
 
 ``` json
-{
-  "api/auth/signup": "api/auth/signup.lua",
-  "api/auth/signin": "api/auth/signin.lua",
-  "api/test/user": "api/test/user.lua",
-  "api/test/all": "api/test/all.lua",
-  
+{  
   "api/mytest": "api/mytest.lua"
-
 }
 ```
 
